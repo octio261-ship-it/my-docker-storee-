@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "8080:3000"
+    restart: always
+
+  database:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: store_user
+      POSTGRES_PASSWORD: 748596+
+      POSTGRES_DB: CLOTHING_STORE
+    ports:
+      - "5432:5432"
+    restart: always  
